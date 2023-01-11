@@ -1,0 +1,35 @@
+<div class="searcher-container">
+    <input [(ngModel)]="username" type="text" placeholder="Nombre de usuario"/>
+    <button (click)="searchRepositories()">Buscar</button>
+</div>
+
+<div class="user-container" *ngIf="!user">Sin resultados</div>
+<div class="user-container" *ngIf="user">
+    <div class="user-info">
+        <div  style="width: 30%;">
+            <img [src]="user.avatar_url" alt="Foto de usuario">
+        </div>
+        <div style="width: 20%; text-align: left;" >
+            <div><h3>{{user.login}}</h3></div>
+            <div><p>{{user.bio}}</p></div>
+        </div>
+        <div style="width: 50%;">
+            <p>Buscar repositorio</p>
+            <input [(ngModel)]="repositoryName" type="text" placeholder="Nombre del repositorio"/>
+            <button (click)="filterByName()">Buscar</button>
+            <div style="margin-top:20px; display:flex; align-items: center; text-align: center;">
+                <span>
+                    <div *ngFor="let lang of languages; let i=index" style="float:left; align-items: center; display: flex; margin-left: 5px;">
+                        <label style="display: flex; align-items: center;">
+                        <input [(ngModel)]="checkLang[i]" style="width: 18px;" type="checkbox" [value]="lang" (change)="onCheckboxChange()" />
+                        {{lang}}
+                        </label>
+                    </div>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div style="text-align: center;">
+        <app-repositories [repositories]="repositories"></app-repositories>
+    </div>
+</div>

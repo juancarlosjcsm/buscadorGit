@@ -1,0 +1,25 @@
+<h4>Repositorios</h4>
+<table>
+    <tr>
+        <th (click)="sortDataByName()">Nombre</th>
+        <th>Descripción</th>
+        <th>Enlace</th>
+        <th (click)="sortDataByStars()">Estrellas</th>
+        <th>Lenguajes</th>
+    </tr>
+    <tr>       
+    </tr>
+    <tr *ngFor="let repository of repositories">
+        <td mat-sort-header="repository.name">{{repository.name}}</td>
+        <td>{{repository.description}}</td>
+        <td><a>{{repository.url}}</a></td>
+        <td>{{repository.stargazers_count}}</td>
+        <td>
+            <ul>
+                <li *ngFor="let lang of repository.languages">{{lang}}</li>
+            </ul>
+        </td>
+    </tr>
+    
+ 
+</table>

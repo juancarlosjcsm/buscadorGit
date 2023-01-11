@@ -1,0 +1,46 @@
+*{
+    font-family: Roboto,sans-serif;
+}
+
+.searcher-container{
+    border-bottom: 1px solid gray;
+    padding: 10px;
+    text-align: center;
+}
+
+input{
+    height: 30px;
+    width: 257px;
+    font-size: 14px;
+    margin: 0 5px 0 0;
+}
+
+button{
+    background-color: #ed1c24; 
+    border: none;
+    color: white;
+    padding: 10px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    border-radius: 5%;
+}
+
+.user-container{
+    padding-top: 10px;
+}
+
+.user-info{
+    columns: 3; 
+    text-align: center;
+    display: flex;
+    align-items: center
+}
+
+img {
+    border-radius: 50%;
+    max-width: 150px;
+}
+
+  
